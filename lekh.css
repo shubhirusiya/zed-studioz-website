@@ -52,25 +52,24 @@ nav {
 .page-indicator {
   position: absolute;
   left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  background: #072b4d;
-  padding: 0.3rem 1.5rem;  /* Reduced padding */
+  top: 0; /* Start from the top */
+  transform: translate(-50%, 0); /* Translate only vertically */
+  background: #0b243a; /* Darker blue color */
+  padding: 0.5rem 2rem;
   color: white;
-  font-size: 1.0rem;      /* Increased font size */
-  border: 2px solid #004488;
+  font-size: 1.3rem;
+  border: 2px solid #004488; /* Border for sharp edges */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-  min-width: 150px;       /* Reduced minimum width */
+  min-width: 300px;
   text-align: center;
-  clip-path: polygon(10% 0, 90% 0, 100% 50%, 90% 100%, 10% 100%, 0 50%);
-  height: 30px;           /* Reduced height */
+  height: 80px; /* Increased height */
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 500;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  z-index: 1;
+  clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
 }
 
 

@@ -79,22 +79,6 @@ document.querySelectorAll('.dot').forEach((dot, index) => {
     });
 });
 
-// Wait for DOM to be fully loaded
-document.addEventListener('DOMContentLoaded', function() {
-    const pageIndicator = document.getElementById('pageIndicator');
-    const sections = document.querySelectorAll('section');
-    const navItems = document.querySelectorAll('.nav-item');
-
-    // Function to update notch text and active nav item
-    function updateNotch(newText, activeLink) {
-        pageIndicator.textContent = newText;
-        
-        // Update active state of nav items
-        navItems.forEach(item => item.style.color = 'white');
-        if (activeLink) {
-            activeLink.style.color = '#007bff';
-        }
-    }
 
     // Handle scroll events
     function handleScroll() {
@@ -122,22 +106,5 @@ document.addEventListener('DOMContentLoaded', function() {
     // Listen for scroll events
     window.addEventListener('scroll', handleScroll);
 
-    // Handle click events on nav items
-    navItems.forEach(item => {
-        item.addEventListener('click', function(e) {
-            e.preventDefault();
-            const pageTitle = this.getAttribute('data-page');
-            updateNotch(pageTitle, this);
-            
-            // Smooth scroll to section
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            if (targetSection) {
-                targetSection.scrollIntoView({ behavior: 'smooth' });
-            }
-        });
-    });
-
     // Set initial state
     handleScroll();
-});
