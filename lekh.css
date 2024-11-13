@@ -1,0 +1,752 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #0a0a0a;
+  color: white;
+}
+header {
+  background: rgba(26, 26, 46, 0.95);
+  padding: 1rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #4f9cf9;
+}
+
+
+.page-indicator {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: #072b4d;
+  padding: 0.3rem 1.5rem;  /* Reduced padding */
+  color: white;
+  font-size: 1.0rem;      /* Increased font size */
+  border: 2px solid #004488;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  min-width: 150px;       /* Reduced minimum width */
+  text-align: center;
+  clip-path: polygon(10% 0, 90% 0, 100% 50%, 90% 100%, 10% 100%, 0 50%);
+  height: 30px;           /* Reduced height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  z-index: 1;
+}
+
+
+
+/* CSS */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4rem;
+  background: linear-gradient(135deg, #090d22, #000000);
+  color: white;
+}
+
+.text-container {
+  text-align: left;
+  max-width: 50%;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.studio-text {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #a3c4f3;
+  opacity: 0;
+  transform: translateX(-100%);
+  animation: slideIn 1s ease-out forwards;
+  animation-delay: 0.5s;
+}
+.happy-text {
+  font-size: 5rem;
+  font-weight: bold;
+  color: #72a0c1;
+  margin-top: 1rem;
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 1.5s;
+}
+
+.glitch-text {
+  display: inline-block;
+  position: relative;
+  animation: colorGlitch 5s linear infinite;
+}
+
+
+.games-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4rem;
+  max-width: 1200px;
+  margin-left: 1rem;
+  padding: 1rem;
+}
+
+.game-image-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: rgba(10, 15, 44, 0.8);
+  padding: 1rem;
+  padding-right: 2rem;
+  border-radius: 3px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3, 0.8);
+  margin-left: -60px;
+  margin-right: 20rem; /* Shift the container 20 pixels to the left */
+}
+
+.game-image {
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 2rem;
+  margin-left: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  max-width: 300px;
+}
+
+.game-text-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 100px;
+}
+
+@media (max-width: 968px) {
+  .games-container {
+    gap: 2rem;
+    padding: 1rem;
+  }
+
+  .game-image-container {
+    flex-direction: column;
+    padding: 2rem;
+  }
+
+  .game-image {
+    margin-right: 0;
+    margin-bottom: 1rem;
+    max-width: 200px;
+  }
+
+  .game-text-box {
+    max-width: 100%;
+    align-items: center;
+  }
+}
+
+.game-title {
+  font-size: 2rem;
+  color: #a3c4f3;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+@keyframes slideIn {
+  /* ... existing keyframes */
+}
+
+@keyframes fadeIn {
+  /* ... existing keyframes */
+}
+
+@keyframes colorGlitch {
+  0% {
+    color: #72a0c1;
+  }
+  20% {
+    color: #a3c4f3;
+  }
+  40% {
+    color: #72a0c1;
+  }
+  60% {
+    color: #a3c4f3;
+  }
+  80% {
+    color: #72a0c1;
+  }
+  100% {
+    color: #a3c4f3;
+  }
+}
+
+
+/* Game Info Section */
+/* Game Info Section */
+/* Game Info Section */
+.game-info {
+  padding: 2rem 4rem;
+  background-color: #111;
+}
+
+.section-title {
+  font-size: 1.8rem; /* Adjusted for alignment with image */
+  margin-bottom: 1.5rem;
+  color: white;
+  font-weight: bold;
+}
+
+.info-container {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(30, 30, 30, 0.8);
+  padding: 1.5rem 2rem;
+  border-radius: 8px;
+}
+
+.game-description {
+  flex: 1;
+  font-size: 1.1rem; /* Adjusted font size */
+  line-height: 1.5;
+  color: white;
+}
+
+.release-date {
+  margin-top: 1rem;
+  font-weight: bold;
+  color: white;
+}
+
+.info-tags {
+  min-width: 280px; /* Adjusted to fit layout */
+}
+
+.platform, .genre {
+  margin-bottom: 1.5rem;
+}
+
+.platform h3, .genre h3 {
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+  color: white;
+}
+
+.tag-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center; /* Center align tag text */
+}
+
+
+/* Character Section */
+.character-section {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: #0a0a0a;
+}
+
+.play-title {
+  font-family: 'Cinzel', serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  letter-spacing: 2px;
+  color: white;
+}
+
+.play-description {
+  font-family: 'Cinzel', serif;
+  font-size: 1.3rem;
+  font-weight: 400;
+  max-width: 1000px;
+  margin: 0 auto 4rem;
+  line-height: 1.8;
+  letter-spacing: 0.5px;
+  opacity: 0.9;
+  color: white;
+}
+
+.character-selection {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.character-box {
+  flex: 1;
+  max-width: 600px;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.character-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 70%);
+  z-index: 1;
+}
+
+.naoe {
+  background: url('lekhcharacter1.png') center/cover;
+  background-color: #1a1a1a;
+}
+
+.yasuke {
+  background: url('lekhcharacter2.jpg') center/cover;
+  background-color: #1a1a1a;
+}
+
+.character-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem;
+  text-align: left;
+  z-index: 2;
+}
+.view-details {
+  text-decoration: none;
+}
+
+
+.character-content h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+  color: white;
+}
+
+.character-content p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Animations */
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Hover Effects */
+.character-box:hover {
+  transform: scale(1.02);
+}
+
+.tag:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .character-selection {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .character-box {
+    width: 100%;
+    max-width: 800px;
+  }
+
+  .info-container {
+    flex-direction: column;
+  }
+
+  .info-tags {
+    width: 100%;
+  }
+}
+.shinobi-banner {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-image: url('lekhimage1.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.banner-left {
+  background-image: url('lekhimage2.png');
+  justify-content: flex-start;
+}
+
+.banner-right {
+  background-image: url('lekhimage3.png');
+  justify-content: flex-end;
+
+}
+
+.text-overlay {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 40px;
+  margin-right: 50px;
+  width: 600px;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.banner-left .text-overlay {
+  margin-left: 50px;
+  margin-right: 0;
+}
+
+.banner-right .text-overlay {
+  margin-right: 50px;
+  margin-left: 0;
+}
+
+.shinobi-title {
+  color: white;
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-family: 'Cinzel', serif;
+  opacity: 1;
+  transform: translateX(50px);
+}
+
+.shinobi-description {
+  color: white;
+  font-size: 18px;
+  line-height: 1.6;
+  opacity: 1;
+  transform: translateX(50px);
+}
+
+@media (max-width: 768px) {
+  .text-overlay {
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  .shinobi-title {
+    font-size: 36px;
+  }
+  
+  .shinobi-description {
+    font-size: 16px;
+  }
+}
+
+/* Add these styles to your existing CSS file */
+
+.general-info {
+  background: linear-gradient(135deg, #0a0a0a 0%, #111827 50%, #0a0a0a 100%);
+  padding: 64px 0;
+  color: #ffffff;
+  font-family: 'Arial', sans-serif;
+}
+
+.general-info-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.info-main-title {
+  font-family: 'Cinzel', serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 48px;
+  color: white;
+  letter-spacing: 2px;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 32px;
+  margin-bottom: 32px;
+  background-color: rgba(30, 30, 30, 0.5);
+  padding: 32px;
+  border-radius: 8px;
+}
+
+.info-column {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.info-group {
+  margin-bottom: 16px;
+}
+
+.info-group h3 {
+  color: #93c5fd;
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-family: 'Cinzel', serif;
+  letter-spacing: 1px;
+}
+
+.info-group p {
+  color: #e2e8f0;
+  line-height: 1.5;
+}
+
+.age-rating {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.age-badge {
+  background-color: #dc2626;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.language-section {
+  margin-top: 32px;
+  background-color: rgba(30, 30, 30, 0.5);
+  padding: 24px;
+  border-radius: 8px;
+}
+
+.language-section h3 {
+  color: #93c5fd;
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  font-family: 'Cinzel', serif;
+  letter-spacing: 1px;
+}
+
+.language-section p {
+  color: #e2e8f0;
+  margin-bottom: 8px;
+}
+
+.see-more {
+  background: none;
+  border: none;
+  color: #60a5fa;
+  cursor: pointer;
+  padding: 0;
+  font-size: inherit;
+  transition: color 0.3s ease;
+}
+
+.see-more:hover {
+  color: #93c5fd;
+}
+
+.copyright {
+  text-align: center;
+  color: #94a3b8;
+  font-size: 0.875rem;
+  margin-top: 48px;
+}
+
+.genre-links a {
+  color: #60a5fa;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.genre-links a:hover {
+  color: #93c5fd;
+}
+
+@media (max-width: 768px) {
+  .general-info {
+      padding: 32px 0;
+  }
+
+  .info-main-title {
+      font-size: 2rem;
+      margin-bottom: 32px;
+  }
+
+  .info-grid {
+      grid-template-columns: 1fr;
+      gap: 24px;
+      padding: 24px;
+  }
+
+  .info-column {
+      gap: 16px;
+  }
+
+  .language-section {
+      padding: 16px;
+  }
+}
+.more-games {
+  background: linear-gradient(135deg, #0f172a 0%, #172554 50%, #0f172a 100%);
+  padding: 80px 20px;
+}
+
+.more-games-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.more-games-title {
+  font-family: 'Arial', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 48px;
+  letter-spacing: 2px;
+}
+
+.game-boxes {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+}
+
+.game-box {
+  flex: 1;
+  max-width: 500px;
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.game-image {
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+}
+
+.game-info {
+  padding: 24px;
+  text-align: center;
+}
+
+.game-info h3 {
+  font-family: 'Arial', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.view-details {
+  background-color: #5b21b6;
+  color: #ffffff;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.view-details:hover {
+  background-color: #7c3aed;
+}
+
+.game-box:hover {
+  transform: scale(1.02);
+}
+
+@media (max-width: 768px) {
+  .more-games-title {
+    font-size: 2.5rem;
+    margin-bottom: 32px;
+  }
+
+  .game-boxes {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .game-box {
+    max-width: 100%;
+  }
+}

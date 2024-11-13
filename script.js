@@ -1,3 +1,16 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
 AOS.init({
     duration: 1000,
     once: true
@@ -64,4 +77,67 @@ document.querySelectorAll('.dot').forEach((dot, index) => {
         slideIndex = index;
         showSlides();
     });
+});
+
+// Wait for DOM to be fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+    const pageIndicator = document.getElementById('pageIndicator');
+    const sections = document.querySelectorAll('section');
+    const navItems = document.querySelectorAll('.nav-item');
+
+    // Function to update notch text and active nav item
+    function updateNotch(newText, activeLink) {
+        pageIndicator.textContent = newText;
+        
+        // Update active state of nav items
+        navItems.forEach(item => item.style.color = 'white');
+        if (activeLink) {
+            activeLink.style.color = '#007bff';
+        }
+    }
+
+    // Handle scroll events
+    function handleScroll() {
+        // Get current scroll position
+        const scrollPosition = window.scrollY + 100; // Added offset for better detection
+
+        // Find the current section
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                const sectionId = section.getAttribute('id');
+                // Find corresponding nav item
+                const activeNavItem = document.querySelector(`.nav-item[href="#${sectionId}"]`);
+                
+                if (activeNavItem) {
+                    const pageTitle = activeNavItem.getAttribute('data-page');
+                    updateNotch(pageTitle, activeNavItem);
+                }
+            }
+        });
+    }
+
+    // Listen for scroll events
+    window.addEventListener('scroll', handleScroll);
+
+    // Handle click events on nav items
+    navItems.forEach(item => {
+        item.addEventListener('click', function(e) {
+            e.preventDefault();
+            const pageTitle = this.getAttribute('data-page');
+            updateNotch(pageTitle, this);
+            
+            // Smooth scroll to section
+            const targetId = this.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            if (targetSection) {
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+
+    // Set initial state
+    handleScroll();
 });
