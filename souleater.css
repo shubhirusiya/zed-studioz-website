@@ -63,9 +63,9 @@ nav {
   font-size: 1.3rem;
   border: 2px solid #02162a; /* Border for sharp edges */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-  min-width: 500px;
+  min-width: 400px;
   text-align: center;
-  height: 80px; /* Increased height */
+  height: 70px; /* Increased height */
   display: flex;
   align-items: center;
   justify-content: center;
