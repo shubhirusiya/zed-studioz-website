@@ -8,7 +8,7 @@ body {
   color: white;
 }
 header {
-  background: rgba(26, 26, 46, 0.95);
+  background: rgba(7, 7, 13, 0.95);
   padding: 1rem;
   position: fixed;
   width: 100%;
@@ -49,18 +49,20 @@ nav {
 }
 
 
+
+
 .page-indicator {
   position: absolute;
   left: 50%;
   top: 0; /* Start from the top */
   transform: translate(-50%, 0); /* Translate only vertically */
-  background: #0b243a; /* Darker blue color */
+  background: #050e15; /* Darker blue color */
   padding: 0.5rem 2rem;
   color: white;
   font-size: 1.3rem;
-  border: 2px solid #004488; /* Border for sharp edges */
+  border: 2px solid #02162a; /* Border for sharp edges */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-  min-width: 300px;
+  min-width: 500px;
   text-align: center;
   height: 80px; /* Increased height */
   display: flex;
