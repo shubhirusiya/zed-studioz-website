@@ -11,6 +11,51 @@ body {
   overflow-x: hidden;
 }
 
+
+
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.nav-logo {
+  width: 50px;  /* Adjust this value to make logo bigger/smaller */
+  height: 40px; /* Adjust this value to make logo bigger/smaller */
+  object-fit: contain;
+  border-radius: 4px;
+  transition: transform 0.3s ease;
+}
+
+.nav-logo:hover {
+  transform: scale(1.1);  /* Slight zoom effect on hover */
+}
+
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;  /* Space between logo and text */
+}
+
+.company-name h1 {
+  margin: 0;
+  font-size: 20px;  /* Adjust size as needed */
+  font-weight: bold;
+  color: #cec8c8;  /* Adjust color as needed */
+}
+
+/* Remove the old standalone logo class if you're not using it */
+.logo {
+  display: none;
+}
+
+
+
+
+
+
+
 header {
   background: rgba(7, 7, 13, 0.95);
   padding: 1rem;
@@ -68,7 +113,7 @@ nav {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   min-width: 500px;
   text-align: center;
-  height: 80px; /* Increased height */
+  height: 85px; /* Increased height */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -81,6 +126,260 @@ nav {
 .nav-item.active {
   color: #007bff;
 }
+
+
+
+
+
+
+
+
+
+/* Team Section Styles */
+.team-section {
+  padding: 6rem 2rem 2rem;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  position: relative;
+  min-height: 50vh;
+}
+
+.team-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.team-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 4rem;
+  color: #4f9cf9;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.team-members {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+  position: relative;
+}
+
+/* Modern Horizontal Layout Style */
+.team-member {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+  background: transparent;
+  border-left: 3px solid transparent;
+  transition: all 0.4s ease;
+}
+
+.team-member::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 3px;
+  height: 0;
+  background: linear-gradient(to bottom, #4f9cf9, #2979ff);
+  transition: height 0.4s ease;
+}
+
+.team-member:hover::before {
+  height: 100%;
+}
+
+.member-content {
+  position: relative;
+  z-index: 1;
+  padding-left: 2rem;
+}
+
+.member-name {
+  font-size: 1.8rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  transform: translateX(0);
+  transition: transform 0.4s ease;
+}
+
+.member-role {
+  color: #4f9cf9;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  opacity: 0.9;
+  transform: translateX(0);
+  transition: transform 0.4s ease 0.1s;
+}
+
+.member-email {
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding: 0.5rem 0;
+  transform: translateX(0);
+  transition: all 0.4s ease 0.2s;
+  position: relative;
+}
+
+.member-email::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #4f9cf9;
+  transition: width 0.3s ease;
+}
+
+/* Hover Effects */
+.team-member:hover {
+  background: rgba(79, 156, 249, 0.05);
+}
+
+.team-member:hover .member-name,
+.team-member:hover .member-role,
+.team-member:hover .member-email {
+  transform: translateX(1rem);
+}
+
+.team-member:hover .member-email::after {
+  width: 100%;
+}
+
+/* Background Elements */
+.team-member::after {
+  content: '';
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border: 2px solid rgba(79, 156, 249, 0.1);
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+.team-member:hover::after {
+  opacity: 1;
+  width: 60px;
+  height: 60px;
+}
+
+/* Animated Background Line */
+.team-member::before {
+  content: '';
+  position: absolute;
+  left: -2px;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, 
+      transparent 0%,
+      #4f9cf9 50%,
+      transparent 100%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.team-member:hover::before {
+  opacity: 1;
+}
+
+/* Interactive Elements */
+.member-social {
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 1rem;
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+.social-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(79, 156, 249, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  background: rgba(79, 156, 249, 0.3);
+  transform: scale(1.1);
+}
+
+.team-member:hover .member-social {
+  opacity: 1;
+  transform: translateY(-50%) translateX(-1rem);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .team-section {
+      padding: 4rem 1rem 2rem;
+  }
+
+  .team-members {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+  }
+
+  .team-member {
+      padding: 1.5rem;
+  }
+
+  .member-name {
+      font-size: 1.5rem;
+  }
+
+  .member-content {
+      padding-left: 1rem;
+  }
+}
+
+/* Optional: Add a subtle animation when elements enter viewport */
+@keyframes slideIn {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.team-member {
+  animation: slideIn 0.6s ease forwards;
+}
+
+.team-member:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.team-member:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+
+
+
+
+
+
 
 
 
@@ -297,17 +596,18 @@ section {
 }
 
 /* Logo section */
-.logo-section {
+.logo-sectionn {
   flex: 1;
-  max-width: 500px;
+  max-width: 550px;  /* Increased from 500px */
   text-align: center;
+  margin-left: 2rem;  /* Added to shift right */
 }
 
 .logo-container {
   background: rgba(255, 255, 255, 0.08);
-  padding: 3rem;
+  padding: 3.5rem;  /* Increased padding to accommodate larger logo */
   border-radius: 20px;
-  margin-bottom: 2.5rem;
+  margin-bottom: 0;  /* Changed from 2.5rem to move slogan closer */
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
@@ -315,6 +615,54 @@ section {
   position: relative;
   overflow: hidden;
 }
+
+.studio-logo {
+  width: 100%;
+  max-width: 450px;  /* Increased from 400px */
+  height: auto;
+  animation: logoPopEffect 0.8s ease-out;
+  position: relative;
+  z-index: 1;
+}
+
+.logo-slogann {
+  color: #4f9cf9;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  padding: 1.5rem;
+  opacity: 0;
+  animation: sloganFadeIn 0.5s ease-out 0.8s forwards;
+  text-shadow: 0 2px 10px rgba(79, 156, 249, 0.3);
+  background: linear-gradient(45deg, #4f9cf9, #2979ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  /* Added styles for slogan container */
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.08);
+  margin-top: 1.5rem;  /* Reduced from 2rem */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .logo-container::before {
   content: '';
@@ -337,32 +685,8 @@ section {
   box-shadow: 0 15px 40px rgba(79, 156, 249, 0.2);
 }
 
-.studio-logo {
-  width: 100%;
-  max-width: 400px;
-  height: auto;
-  animation: logoPopEffect 0.8s ease-out;
-  position: relative;
-  z-index: 1;
-}
 
-.logo-slogan {
-  color: #4f9cf9;
-  font-size: 1.8rem;
-  font-weight: 600;
-  margin-top: 2rem;
-  opacity: 0;
-  animation: sloganFadeIn 0.5s ease-out 0.8s forwards;
-  text-shadow: 0 2px 10px rgba(79, 156, 249, 0.3);
-  
-  /* Gradient text - with proper fallbacks */
-  background: linear-gradient(45deg, #4f9cf9, #2979ff);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  -webkit-text-fill-color: transparent;
-  position: relative;
-}
+
 
 @keyframes logoPopEffect {
   0% {
@@ -413,6 +737,61 @@ section {
     max-width: 350px;
   }
 }
+
+
+
+
+
+
+
+
+
+@media (max-width: 1200px) {
+  .logo-section {
+    margin-left: 1rem;
+  }
+  
+  .logo-container {
+    padding: 2.5rem;
+  }
+  
+  .studio-logo {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 968px) {
+  .contact-section-container {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  
+  .logo-section {
+    margin-left: 0;
+    max-width: 100%;
+  }
+  
+  .logo-container {
+    max-width: 450px;
+    margin: 0 auto;
+  }
+  
+  .logo-slogan {
+    max-width: 450px;
+    margin: 1.5rem auto 0;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
 
 @media (max-width: 968px) {
   .contact-section-container {
@@ -770,6 +1149,8 @@ footer {
 }
 
 .social-links img {
+  margin-right:0.8rem;
+  margin-left:1rem;
   width: 24px;
   height: 24px;
   opacity: 0.8;

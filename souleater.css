@@ -52,6 +52,66 @@ nav {
 
 
 
+
+
+
+
+
+
+
+
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.nav-logo {
+  width: 60px;  /* Adjust this value to make logo bigger/smaller */
+  height: 40px; /* Adjust this value to make logo bigger/smaller */
+  object-fit: contain;
+  border-radius: 4px;
+  transition: transform 0.3s ease;
+}
+
+.nav-logo:hover {
+  transform: scale(1.1);  /* Slight zoom effect on hover */
+}
+
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;  /* Space between logo and text */
+}
+
+.company-name h1 {
+  margin: 0;
+  font-size: 20px;  /* Adjust size as needed */
+  font-weight: bold;
+  color: #dcd9d9;  /* Adjust color as needed */
+}
+
+/* Remove the old standalone logo class if you're not using it */
+.logo {
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .page-indicator {
   position: absolute;
   left: 50%;
