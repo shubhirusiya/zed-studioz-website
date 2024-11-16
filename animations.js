@@ -135,4 +135,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-  
+  // Initialize particles.js
+particlesJS.load('particles-js', 'particles.json', function() {
+  console.log('particles.js loaded - callback');
+});
+
+// Your existing animations code below...
