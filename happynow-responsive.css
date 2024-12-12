@@ -1,0 +1,218 @@
+/* Ultra-Responsive Mobile Styles for Phones */
+@media screen and (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    /* Navigation Modifications */
+    header {
+        padding: 10px 5px;
+    }
+
+    .logo-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-logo {
+        max-width: 80px;
+    }
+
+    .company-name h1 {
+        font-size: 1.2em;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-links a {
+        padding: 8px;
+        text-align: center;
+        margin: 5px 0;
+    }
+
+    /* Hero Section */
+    .hero-section {
+        height: auto;
+        position: relative;
+        padding: 10px;
+    }
+
+    #particles-js {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+
+    .text-container {
+        text-align: center;
+        padding: 10px;
+    }
+
+    .studio-text {
+        font-size: 1em;
+        margin-bottom: 10px;
+    }
+
+    .happy-text .glitch-text {
+        font-size: 2em;
+    }
+
+    .game-image {
+        width: 100%;
+        max-height: 250px;
+        object-fit: cover;
+        margin-top: 15px;
+    }
+
+    /* Game Info Section */
+    .game-info {
+        padding: 15px;
+    }
+
+    .section-title {
+        text-align: center;
+        font-size: 1.5em;
+    }
+
+    .info-container {
+        flex-direction: column;
+    }
+
+    .game-description {
+        text-align: center;
+    }
+
+    .info-tags {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .platform, .genre {
+        width: 100%;
+        text-align: center;
+    }
+
+    .tag-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .tag {
+        margin: 5px;
+        padding: 5px 10px;
+        font-size: 0.8em;
+    }
+
+    /* Character Section */
+    .character-section {
+        padding: 15px;
+    }
+
+    .play-title {
+        font-size: 1.5em;
+        text-align: center;
+    }
+
+    .character-selection {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .character-box {
+        width: 100%;
+        margin: 10px 0;
+        padding: 15px;
+    }
+
+    /* Shinobi Banners */
+    .shinobi-banner {
+        padding: 15px;
+    }
+
+    .shinobi-title {
+        font-size: 1.3em;
+        text-align: center;
+    }
+
+    .shinobi-description {
+        font-size: 0.9em;
+        text-align: center;
+    }
+
+    /* General Info Section */
+    .general-info-container {
+        padding: 15px;
+    }
+
+    .info-grid {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .info-column {
+        width: 100%;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    .download-button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    /* More Games Section */
+    .more-games-container {
+        padding: 15px;
+    }
+
+    .game-boxes {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .game-box {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .game-imagee {
+        height: 200px;
+    }
+
+    /* Typography */
+    h1 { font-size: 1.5em; }
+    h2 { font-size: 1.3em; }
+    h3 { font-size: 1.1em; }
+    p { font-size: 0.9em; }
+
+    /* Ensure full width and proper scaling */
+    * {
+        max-width: 100%;
+    }
+}
+
+/* Additional Mobile-Friendly Tweaks */
+@media screen and (max-width: 480px) {
+    /* Improve touch targets */
+    a, button, .nav-item {
+        min-height: 44px;
+        min-width: 44px;
+        padding: 10px;
+    }
+
+    /* Prevent text overflow */
+    * {
+        word-wrap: break-word;
+    }
+}
